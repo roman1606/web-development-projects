@@ -1,0 +1,54 @@
+<!-- Assignment 3 - Question 3 -->
+<!-- Roman Tsibulsky -->
+<!-- July 1st -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="author" content="Roman Tsibulsky">
+	    <link rel="stylesheet" href="storyGenerator.css">
+	    <title>Story Generator</title>
+  	</head>
+   	<body>
+   		<div id="inital-page">
+   			<h1>Story Generator</h1>
+   			<p>Enter appropriate values in all of the text boxes. Then click the Done button to generate a story with your entered values plugged into it.</p>
+   			<form id="story-form">
+   				<div class="form-group">
+	   				<label for="noun">noun:&nbsp;</label>
+					<input type="text" id="noun" name="noun">
+				</div>
+				<div class="form-group">
+					<label for="past-tense-verb-first">past tense verb:&nbsp;</label>
+					<input type="text" id="past-tense-verb-first" name="past-tense-verb-first">
+				</div>
+				<div class="form-group">
+					<label for="adjective-first">adjective:&nbsp</label>
+					<input type="text" id="adjective-first" name="adjective-first">
+				</div>
+				<div class="form-group">
+					<label for="past-tense-verb-second">past tense verb:&nbsp;</label>
+					<input type="text" id="past-tense-verb-second" name="past-tense-verb-second">
+				</div>
+				<div class="form-group">
+					<label for="adjective-second">adjective:&nbsp;</label>
+					<input type="text" id="adjective-second" name="adjective-second">
+				</div>
+				<div class="input-buttons">
+					<input type="button" value="Done" onclick="generateStory();">
+					<input type="reset" name="Reset">
+				</div>
+   			</form>
+   		</div>
+   		<div id="story-time">
+   			<p>It was a dark and stormy night. A shot rang out! A <span class="missing"></span> slammed. The maid <span class="missing"></span>. Suddenly, a <span class="missing"></span> ship appeared on the horizon! While millions of people <span class="missing"></span>, the king lived in luxury. Meanwhile, on a <span class="missing"></span> farm in Kansas, a boy was growing up.<br><br>The End</p>
+   			<div class="return-button">
+   				<input type="button" value="Return" onclick="returnForm();">
+   			</div>
+   		</div>
+   		<script src="storyGenerator.js"></script>
+    </body>
+</html>

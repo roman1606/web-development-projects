@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+body
+{
+	background-image: url(Images/bodyOfWater.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	color: #C0C0C0;
+}
+
+.audio
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

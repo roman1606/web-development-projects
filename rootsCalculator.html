@@ -1,0 +1,96 @@
+<!-- Assignment 3 - Question 2 -->
+<!-- Roman Tsibulsky -->
+<!-- June 30th-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="author" content="Roman Tsibulsky">
+	    <title>Quadratic Equation Roots Calculator</title>
+  	</head>
+   	<body>
+   		<h1>Quadratic Equation Roots Calculator</h1>
+   		<p>This web page finds the roots of a polynomial equation of the following form:<br><span style="font-style:italic">ax<sup>2</sup>+bx+c</span> = 0</p>
+   		<p><span style="font-style:italic">a, b,</span> and <span style="font-style:italic">c</span> must be integers between -99 and +99, and a must be non-zero.</p>
+   		<form id="form">
+   			<label for="a-value">a:</label>
+   			<input type="number" id="a-value" name="a-value">
+   			<label for="b-value">b:</label>
+   			<input type="number" id="b-value" name="b-value">
+   			<label for="c-value">c:</label>
+   			<input type="number" id="c-value" name="c-value">
+   		</form>
+   		<input class="calculate" type="button" value="Calculate roots" onclick="calculateRoots();" style="margin-top:10px;">
+   		<div id="message" style="margin-top:10px;"></div>
+   		<script>
+   			var aValue = 0;
+   			var bValue = 0;
+   			var cValue = 0;
+   			var errorMessage;
+   			var message;
+
+   			// Calculates the quadratic equation when given a, b and c. 
+   			function calculateRoots()
+   			{
+   				errorMessage = '';
+   				message = document.getElementById("message");
+   				aValue = document.getElementById("a-value").value;
+   				bValue = document.getElementById("b-value").value;
+   				cValue = document.getElementById("c-value").value;
+
+
+   				if (aValue == 0 || aValue > 99 || aValue < -99 || !aValue || (Math.floor(aValue) != aValue))
+   				{
+   					errorMessage = 'Invalid Entry for a. Must be a non-zero integer between -99 and + 99\n';
+   				}
+
+   				if (bValue > 99 || bValue < -99 || !bValue || (Math.floor(bValue) != bValue))
+   				{
+   					errorMessage +=  'Invalid Entry for b. Must be an integer between -99 and + 99\n';
+   				}
+
+   				if (cValue > 99 || cValue < -99 || !cValue || (Math.floor(cValue) != cValue))
+   				{
+   					errorMessage +=  'Invalid Entry for c. Must be an integer between -99 and + 99\n';
+   				}
+
+   				if (errorMessage == '')
+   				{
+   					var bSquared = bValue ** 2;
+   					var fourAC = 4 * aValue * cValue;
+   					var	firstRoot = 0;
+   					var secondRoot = 0;
+   					var twoA = 2 * aValue;
+   					var negativeB = -1 * bValue;
+   					var squareRoot = Math.pow(Math.abs(bSquared - fourAC), 1/2);
+
+   					if (bSquared < fourAC)
+   					{
+   						message.innerHTML = "<p>Solution: x's roots are imaginary</p>";
+   					}
+   					else if (bSquared == fourAC)
+   					{
+   						firstRoot = (negativeB + squareRoot) / (twoA); 
+
+   						message.innerHTML = "<p>Solution: x = " + firstRoot.toFixed(3) + "</p>";
+   					}
+   					else
+   					{
+   						firstRoot = (negativeB + squareRoot) / twoA; 
+   						secondRoot = (negativeB - squareRoot) / twoA; 
+
+   						message.innerHTML = "<p>Solution: x = " + firstRoot.toFixed(3) + ", x = " + secondRoot.toFixed(3) + "</p>";
+   					}
+   				}
+   				else
+   				{
+   					message.innerHTML = "<p></p>";
+   					alert(errorMessage);
+   				}
+   			}
+   		</script>
+    </body>
+</html>

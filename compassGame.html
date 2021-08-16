@@ -1,0 +1,128 @@
+<!-- Assignment 3 - Question 1 -->
+<!-- Roman Tsibulsky -->
+<!-- June 27th-->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="author" content="Roman Tsibulsky">
+	    <link rel="stylesheet" href="compassGame.css">
+	    <title>Compass Game</title>
+  	</head>
+   	<body>
+   		<h1>Compass Game</h1>
+   		<p>The direction letters on the "compass" are scrambled. Press the arrows to properly position the direction letters.</p>
+   		<table>
+   			<tr>
+   				<td><input class="rotate" type="button" value="&#8596;" onclick="rotateLeftTop();"></td>
+   				<td id="top"> </td>
+   				<td></td>
+   			</tr>
+   			<tr>
+   				<td id="left"> </td>
+   				<td><input type="button" value="&#8596;" onclick="rotateLeftRight();"></td>
+   				<td id="right"> </td>
+   			</tr>
+   			<tr>
+   				<td></td>
+   				<td id="bot"> </td>
+   				<td><input class="rotate" type="button" value="&#8596;" onclick="rotateBotRight();"></td>
+   			</tr>
+   		</table>
+   		<p>To restart the game, press <span class="italic">Restart</span>, enter N, S, E, and W in any order in the boxes below; and then press <span class="italic">Update</span>.</p>
+   		<input type="button" value="Reset" onclick="resetPage();">
+   		<form id="form">
+	   			<label for="topForm">Top:</label>
+				<input type="text" id="topForm" name="topForm">
+			<label for="leftForm">Left:</label>
+			<input type="text" id="leftForm" name="leftForm">
+			<label for="rightForm">Right:</label>
+			<input type="text" id="rightForm" name="rightForm">
+			<label for="botForm">Bottom:</label>
+			<input type="text" id="botForm" name="botForm">
+   		</form>
+   		<input type="button" value="Update" onclick="updatePage();">
+   		<script>
+   			var topTable = '';
+   			var leftTable = '';
+   			var rightTable = '';
+   			var botTable = '';
+   			var topForm = '';
+   			var leftForm = '';
+ 			var rightForm = '';
+			var botForm = '';
+			var form = '';
+
+			// Function will reset this page to the inital state of no values.
+   			function resetPage()
+   			{
+   				topTable = document.getElementById("top");
+   				leftTable = document.getElementById("left");
+   				rightTable = document.getElementById("right");
+   				botTable = document.getElementById("bot");
+
+   				topTable.innerHTML = " ";
+   				leftTable.innerHTML = " ";
+   				rightTable.innerHTML = " ";
+   				botTable.innerHTML = " ";
+
+   				form = document.getElementById("form").reset();
+   			}
+
+   			//Function will update the compass with values implemented in the form.
+   			function updatePage()
+   			{
+   				topForm = document.getElementById("topForm").value;
+   				leftForm = document.getElementById("leftForm").value;
+   				rightForm = document.getElementById("rightForm").value;
+   				botForm = document.getElementById("botForm").value;
+
+   				topTable = document.getElementById("top");
+   				leftTable = document.getElementById("left");
+   				rightTable = document.getElementById("right");
+   				botTable = document.getElementById("bot");
+
+   				topTable.innerHTML = topForm;
+   				leftTable.innerHTML = leftForm;
+   				rightTable.innerHTML = rightForm;
+   				botTable.innerHTML = botForm;
+   			}
+
+   			// Function will change places with the top value and left value.
+   			function rotateLeftTop()
+   			{
+   				topTable = document.getElementById("top").innerHTML;
+   				leftTable = document.getElementById("left").innerHTML;
+   				
+   				document.getElementById("top").innerHTML = leftTable;
+   				document.getElementById("left").innerHTML = topTable;
+   			}
+
+   			// Function will change places with the left value and right value.
+   			function rotateLeftRight()
+   			{
+   				leftTable = document.getElementById("left").innerHTML;
+   				rightTable = document.getElementById("right").innerHTML;
+
+   				document.getElementById("left").innerHTML = rightTable;
+   				document.getElementById("right").innerHTML = leftTable;
+   			}
+
+   			// Function will change places with the bot value and right value.
+   			function rotateBotRight()
+   			{
+   				botTable = document.getElementById("bot").innerHTML;
+   				rightTable = document.getElementById("right").innerHTML;
+
+   				document.getElementById("bot").innerHTML = rightTable;
+   				document.getElementById("right").innerHTML = botTable;
+   			}
+   		</script>
+   		<noscript>
+   			<p>Javascript is not enabled!</p>
+   		</noscript>
+    </body>
+</html>

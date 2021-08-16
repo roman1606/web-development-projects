@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+body
+{
+	background-color: #FFECCE;
+}
+header
+{
+	background-color: #2A2D7C;
+	color: #FFF;
+}
+aside
+{
+	color: #000;
+	background-color: #FFF;
+	width: 395px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+	float: right;
+	margin: 5px;
+}
+a
+{
+	color: #FFF;
+	text-decoration: none;
+}
+a:hover
+{
+	text-decoration: underline;
+}
+.bold
+{
+	font-weight: bold;
+}
+article h2
+{
+	background-color: #7651A1;
+	color: #FFF;
+}

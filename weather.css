@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	padding: 10px;
+}
+img
+{
+	width: 700px;
+	hight: 350px;
+}
+nav
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+nav ul li
+{
+	display: inline;
+	color: blue;
+}
+nav ul li a 
+{
+	text-decoration: none;
+}
+nav ul li a:hover
+{
+ 	background-color: gray;
+}
+nav ul li a:visited
+{
+	color: blue;
+}
+.container
+{
+	margin-top: 30px;
+	display: flex;
+}
+.continents, .cities
+{
+	width: 10%;
+}
+.continents
+{
+	text-align: right;
+	line-height: 60px;
+	font-size: 1.1em;
+	min-width: 120px;
+}
+.continents div, .cities div
+{
+	height: 75px;
+}
+.cities
+{
+	margin-left: 10px;
+	font-size: 0.9em;
+	min-width: 160px;
+}
+.cities li
+{
+	list-style: none;
+}
+.box-1, .box-2, .box-3, .box-4, .box-5, .box-6
+{
+	position: relative;
+	top: 12px;
+}

@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.rotate
+{
+	transform:  rotate(-45deg);
+}
+table
+{
+	text-align: center;
+	width: 150px;
+	height: 150px;
+}
+#top, #left, #bot, #right
+{
+	color: red;
+	font-weight: bold;
+}
+td input
+{
+	color: blue;
+}
+.italic
+{
+	font-style: italic;
+}
+form input
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 13px; 
+}

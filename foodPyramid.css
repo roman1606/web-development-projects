@@ -1,0 +1,45 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	margin-top: 10px;
+}
+table
+{
+	margin-left: auto;
+	margin-right: auto;
+}
+caption
+{
+	margin-bottom: 10px;
+	font-size: 2em;
+}
+th
+{
+	background-color: #ED1E24;
+	color: #fff;
+}
+table, td
+{
+	border: 1px solid black;
+}
+th, td
+{
+	padding: 10px;
+}
+tbody
+{
+	font-weight: bold;
+}
+.italics
+{
+	font-weight: normal;
+	font-style: italic;
+}
+tbody tr td:nth-of-type(2),td:nth-of-type(3)
+{
+	text-align: center;
+}
